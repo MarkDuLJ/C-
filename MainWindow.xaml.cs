@@ -1,5 +1,4 @@
-﻿//Longjie Du
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,22 +13,40 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace JoesPet
+namespace PersonalClass
 {
-        /// <summary>
+    /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
     {
         VM vm = new VM();
+        OutputPage secondwindow=new OutputPage();
         public MainWindow()
         {
             InitializeComponent();
             DataContext = vm;
         }
-        private void BtnSave_Click(object sender, RoutedEventArgs e)
+
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
-            vm.Save();
+            if (secondwindow == null)
+            {
+                secondwindow = new OutputPage();
+                secondwindow.Closed += PreviewWindow_Closed;
+                secondwindow.Show();
+            }
         }
+        private void PreviewWindow_Closed(object sender, EventArgs e)
+        {
+            secondwindow = null;
+        }
+
+        private void Window_Closed(object sender, EventArgs e)
+        {
+            if (secondwindow != null)
+                secondwindow.Close();
+        }
+      
     }
 }
