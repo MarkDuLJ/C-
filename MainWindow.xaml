@@ -1,0 +1,116 @@
+﻿<!--Longjie Du-->
+    <Window x:Class="JoesPet.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:JoesPet"
+        mc:Ignorable="d"
+        Title="JoesPet" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Label Grid.Row="0"
+               Grid.Column="0"
+               Grid.ColumnSpan="4" Content="Joe's Pet" HorizontalContentAlignment="Center" FontSize="40"></Label>
+        <Label Grid.Row="1"
+               Grid.Column="0"
+               Content="Crickets"
+               FontSize="35"></Label>
+        <Label Grid.Row="2"
+               Grid.Column="0"
+               Content="Worms"
+               FontSize="35"></Label>
+        <Label Grid.Row="3"
+               Grid.Column="0"
+               Content="Mice"
+               FontSize="35"></Label>
+        <Viewbox Grid.Row="4"
+                 Grid.Column="0">
+            <StackPanel Grid.ColumnSpan="2">
+                <CheckBox Content="Delivery Option" FontSize="35" IsChecked="{Binding IsDelivery}"></CheckBox>
+            </StackPanel>
+        </Viewbox>
+        <TextBox Grid.Row="1"
+                 Grid.Column="1"
+                 Name="tbxCricket"
+                 Text="{Binding Cricket}"
+                 HorizontalContentAlignment="Right"
+                 FontSize="35"></TextBox>
+        <TextBox Grid.Row="2"
+                 Grid.Column="1"
+                 Name="tbxWorm"
+                 Text="{Binding Worm}"
+                 HorizontalContentAlignment="Right"
+                 FontSize="35"></TextBox>
+        <TextBox Grid.Row="3"
+                 Grid.Column="1"
+                 Name="tbxMice"
+                 Text="{Binding Mice}"
+                 HorizontalContentAlignment="Right"
+                 FontSize="35"></TextBox>
+        <Label Grid.Row="1"
+               Grid.Column="2"
+               Content="StandCost"
+               HorizontalContentAlignment="Right"
+               FontSize="35"></Label>
+        <Label Grid.Row="2"
+               Grid.Column="2"
+               Content="Delivery"
+               HorizontalContentAlignment="Right"
+               FontSize="35"></Label>
+        <Label Grid.Row="3"
+               Grid.Column="2"
+               Content="Tax"
+               HorizontalContentAlignment="Right"
+               FontSize="35"></Label>
+        <Label Grid.Row="4"
+               Grid.Column="2"
+               Content="Total"
+               HorizontalContentAlignment="Right"
+               FontSize="35"></Label>
+        <Label Grid.Row="1"
+               Grid.Column="3"
+               Name="StandCost"
+               Content="{Binding StandardCost}"
+               HorizontalContentAlignment="Right"
+               FontSize="35"></Label>
+        <Label Grid.Row="2"
+               Grid.Column="3"
+               Name="Delivery"
+               Content="{Binding DeliveryCost}"
+               HorizontalContentAlignment="Right"
+               FontSize="35"></Label>
+        <Label Grid.Row="3"
+               Grid.Column="3"
+               Name="Tax"
+               Content="{Binding Tax}"
+               HorizontalContentAlignment="Right"
+               FontSize="35"></Label>
+        <Label Grid.Row="4"
+               Grid.Column="3"
+               Name="Total"
+               Content="{Binding Total}"
+               HorizontalContentAlignment="Right"
+               FontSize="35"></Label>
+        <Button Grid.Row="5"
+                Grid.Column="0"
+                Grid.ColumnSpan="4"
+                Name="Save"
+                Content="Save To"></Button>
+
+
+    </Grid>
+</Window>
